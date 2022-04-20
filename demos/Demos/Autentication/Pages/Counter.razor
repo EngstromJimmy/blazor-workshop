@@ -1,0 +1,37 @@
+﻿@page "/counter"
+@attribute [Authorize]
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+<AuthorizeView Roles="superadmin"> 
+    <Authorized> 
+        <p>You're a superadmin, so you can count as high as you like</p> 
+    </Authorized> 
+    <NotAuthorized> 
+        <p>You're a loser, so you can only count up to 3</p> 
+    </NotAuthorized> 
+</AuthorizeView>
+
+
+@code {
+    private int currentCount = 0;
+
+    [CascadingParameter] 
+    public Task<AuthenticationState> AuthStateTask { get; set; }
+
+
+    private async Task IncrementCount()
+    {
+        var authstate = await AuthStateTask;
+        if (currentCount < 3 || authstate.User.IsInRole("superadmin"))
+        {
+            currentCount++;
+        }
+    }
+}

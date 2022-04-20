@@ -1,0 +1,18 @@
+﻿@page "/statemanagement/counter"
+@inject CounterState state
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @state.CurrentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    
+
+    private void IncrementCount()
+    {
+        state.CurrentCount++;
+    }
+}

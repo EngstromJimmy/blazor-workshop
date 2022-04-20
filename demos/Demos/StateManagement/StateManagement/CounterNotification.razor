@@ -1,0 +1,29 @@
+﻿@page "/statemanagement/counternotification"
+@inject CounterState state
+@implements IDisposable
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @state.CurrentCount</p>
+<button class="btn btn-primary" @onclick="@(()=>state.IncrementCount())">Click me</button>
+
+
+@code {
+    protected override Task OnInitializedAsync()
+    {
+        state.CountIncremented += OnCountIncremented;
+        return base.OnInitializedAsync();
+    }
+
+    private async void OnCountIncremented()
+    {
+         await InvokeAsync(() => StateHasChanged());
+    }
+
+    void IDisposable.Dispose()
+    {
+        state.CountIncremented -= OnCountIncremented;
+    }
+}
