@@ -1,7 +1,7 @@
 ﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Components.Authorization;
 
-namespace Autentication.Providers;
+namespace AuthenticationDemo.Providers;
 
 class MyFakeAuthenticationStateProvider : AuthenticationStateProvider
 {

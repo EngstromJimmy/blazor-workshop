@@ -1,0 +1,19 @@
+﻿@page "/"
+@using TemplatedComponentsDemo.Components
+
+<PageTitle>Templated components demo</PageTitle>
+<h3>Templated components demo</h3>
+
+
+<Alert Style="Alert.AlertStyle.Danger">
+    This is a test
+</Alert>
+
+<Alert Style="Alert.AlertStyle.Success">
+    <ChildContent>
+        This is another test
+    </ChildContent>
+</Alert>
+
+<Alert Style="Alert.AlertStyle.Warning"/>
+

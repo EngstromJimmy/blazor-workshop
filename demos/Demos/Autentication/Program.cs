@@ -1,5 +1,5 @@
-using Autentication;
-using Autentication.Providers;
+using AuthenticationDemo;
+using AuthenticationDemo.Providers;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;

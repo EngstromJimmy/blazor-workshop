@@ -1,16 +1,15 @@
-﻿namespace Demos.StateManagement
+﻿namespace StateManagementDemo;
+
+public class CounterState
 {
-    public class CounterState
+    public int CurrentCount { get; set; }
+
+    public event Action? CountIncremented;
+
+    public Task IncrementCount()
     {
-        public int CurrentCount { get; set; }
-
-        public event Action? CountIncremented;
-
-        public Task IncrementCount()
-        {
-            CurrentCount++;
-            CountIncremented?.Invoke();
-            return Task.CompletedTask;
-        }
+        CurrentCount++;
+        CountIncremented?.Invoke();
+        return Task.CompletedTask;
     }
 }

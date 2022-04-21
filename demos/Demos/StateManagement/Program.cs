@@ -1,5 +1,5 @@
-using Demos.Data;
-using Demos.StateManagement;
+using StateManagementDemo;
+using StateManagementDemo.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
