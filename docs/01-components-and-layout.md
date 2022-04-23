@@ -70,7 +70,7 @@ Override the `OnInitializedAsync` method in the `@code` block to retrieve the li
 }
 ```
 
-The `/specials` API is defined by the `SpecialsController` in the **BlazingPizza.Server** project.
+The `/specials` API is defined by the `PizzaApiExtensions` in the **BlazingPizza.Server** project.
 
 Once the component is initialized it will render its markup. Replace the markup in the `Index` component with the following to list the pizza specials:
 
